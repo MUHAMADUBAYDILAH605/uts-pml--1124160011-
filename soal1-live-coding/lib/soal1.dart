@@ -10,31 +10,46 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Profil Muhammad Ubaydillah',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-      ),
-      darkTheme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
-          brightness: Brightness.dark,
-        ),
-      ),
-      themeMode: ThemeMode.system,
-      home: const ProfilPage(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: ProfilePage());
   }
 }
 
-class ProfilPage extends StatelessWidget {
-  const ProfilPage({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text('Profil')));
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('profil saya'),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.blue,
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16),
+        ),
+        child: Column(
+          children: [
+            const CircleAvatar(
+              radius: 60,
+              backgroundColor: Colors.blue,
+              child: Icon(Icons.person, size: 60, color: Colors.white),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'Muhammad Ubaydillah',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const Text(
+              'Teknik Informatika(1124160011)',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16),
+          ],
+        ),
+      ),
+    );
   }
 }
