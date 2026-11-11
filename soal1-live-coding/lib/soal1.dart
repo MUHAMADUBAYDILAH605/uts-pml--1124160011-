@@ -47,6 +47,34 @@ class ProfilePage extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
+            const Card(
+              child: ListTile(
+                leading: Icon(Icons.email, color: Colors.blue),
+                title: Text('email'),
+                subtitle: Text('ubay@gmail.com'),
+              ),
+            ),
+            const Card(
+              child: ListTile(
+                leading: Icon(Icons.phone, color: Colors.blue),
+                title: Text('Phone'),
+                subtitle: Text('08972323232'),
+              ),
+            ),
+            const Card(
+              child: ListTile(
+                leading: Icon(Icons.location_on, color: Colors.blue),
+                title: Text('lokasi'),
+                subtitle: Text('Tangerang'),
+              ),
+            ),
+            const Card(
+              child: ListTile(
+                leading: Icon(Icons.school, color: Colors.blue),
+                title: Text('kampus'),
+                subtitle: Text('Global Institute'),
+              ),
+            ),
           ],
         ),
       ),
