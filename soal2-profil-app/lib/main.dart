@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: themeNotifier,
-      builder: (_, mode, __) => MaterialApp(
+      builder: (context, mode, child) => MaterialApp(
         title: 'Profil Ubay',
         debugShowCheckedModeBanner: false,
         themeMode: mode,
