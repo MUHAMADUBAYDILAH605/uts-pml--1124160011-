@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/login_page.dart';
+import 'screens/profile_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -18,9 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/login',
       routes: {
         '/login': (_) => const LoginPage(),
-        '/profile': (_) => const Scaffold(
-              body: Center(child: Text('Profil (sementara)')),
-            ),
+        '/profile': (_) => const ProfilePage(),
       },
     );
   }
