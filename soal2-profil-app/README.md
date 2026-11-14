@@ -1,17 +1,23 @@
-# soal2_profil_app
+# Aplikasi Profil Mahasiswa
 
-A new Flutter project.
+**Nama:** Muhammad Ubaydillah
+**NIM:** 1124160011
+**Mata Kuliah:** Pemrograman Mobile (UTS PML)
 
-## Getting Started
+## Video Presentasi
+[Tonton di YouTube](https://www.youtube.com/@muhammadubaydillah9663)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Fitur
+- Halaman Profil (foto, data diri, kontak dengan Card + ListTile)
+- Edit Profil dengan validasi (nama wajib, email valid, HP 10-13 digit)
+- Halaman Tentang Saya (keahlian dan riwayat pendidikan)
+- Drawer dan Floating Action Button
+- Tema terang dan gelap dengan toggle di dalam aplikasi
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Cara Menjalankan
+    flutter pub get
+    flutter run
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Paket Tambahan
+Tidak ada paket tambahan selain `flutter` dan `cupertino_icons`.
