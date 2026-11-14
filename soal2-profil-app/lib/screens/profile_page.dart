@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../main.dart';
 import '../models/profile.dart';
 import '../widgets/info_tile.dart';
 import 'edit_profile_page.dart';
@@ -32,12 +33,24 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 
+  void _setDark(bool dark) {
+    themeNotifier.value = dark ? ThemeMode.dark : ThemeMode.light;
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
+    final isDark = themeNotifier.value == ThemeMode.dark;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profil'),
         actions: [
+          IconButton(
+            tooltip: 'Mode gelap',
+            icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
+            onPressed: () => _setDark(!isDark),
+          ),
           IconButton(
             tooltip: 'Tentang saya',
             icon: const Icon(Icons.info_outline),
@@ -72,6 +85,12 @@ class _ProfilePageState extends State<ProfilePage> {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, '/about');
               },
+            ),
+            SwitchListTile(
+              secondary: const Icon(Icons.dark_mode),
+              title: const Text('Mode Gelap'),
+              value: isDark,
+              onChanged: _setDark,
             ),
           ],
         ),
