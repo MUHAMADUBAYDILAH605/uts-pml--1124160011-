@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/profile.dart';
 import '../widgets/info_tile.dart';
+import 'edit_profile_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -21,10 +22,29 @@ class _ProfilePageState extends State<ProfilePage> {
     github: 'MUHAMADUBAYDILAH605',
   );
 
+  Future<void> _edit() async {
+    final result = await Navigator.push<Profile>(
+      context,
+      MaterialPageRoute(builder: (_) => EditProfilePage(profile: _profile)),
+    );
+    if (result != null) {
+      setState(() => _profile = result);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Profil')),
+      appBar: AppBar(
+        title: const Text('Profil'),
+        actions: [
+          IconButton(
+            tooltip: 'Edit profil',
+            icon: const Icon(Icons.edit),
+            onPressed: _edit,
+          ),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 24),
         children: [
@@ -35,12 +55,16 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
           const SizedBox(height: 16),
-          Text(_profile.nama,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headlineSmall),
+          Text(
+            _profile.nama,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
           Text('NIM ${_profile.nim}', textAlign: TextAlign.center),
-          Text('${_profile.prodi} • Kelas ${_profile.kelas}',
-              textAlign: TextAlign.center),
+          Text(
+            '${_profile.prodi} • Kelas ${_profile.kelas}',
+            textAlign: TextAlign.center,
+          ),
           Padding(
             padding: const EdgeInsets.all(16),
             child: Text(_profile.bio, textAlign: TextAlign.center),
