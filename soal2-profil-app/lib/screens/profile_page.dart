@@ -50,6 +50,37 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ],
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text(_profile.nama),
+              accountEmail: Text(_profile.email),
+              currentAccountPicture: const CircleAvatar(
+                backgroundImage: AssetImage('assets/images/foto.jpg'),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: const Text('Profil'),
+              onTap: () => Navigator.pop(context),
+            ),
+            ListTile(
+              leading: const Icon(Icons.info),
+              title: const Text('Tentang Saya'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/about');
+              },
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: _edit,
+        icon: const Icon(Icons.edit),
+        label: const Text('Edit'),
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 24),
         children: [
@@ -77,6 +108,7 @@ class _ProfilePageState extends State<ProfilePage> {
           InfoTile(icon: Icons.email, title: 'Email', value: _profile.email),
           InfoTile(icon: Icons.phone, title: 'No. HP', value: _profile.hp),
           InfoTile(icon: Icons.code, title: 'GitHub', value: _profile.github),
+          const SizedBox(height: 80),
         ],
       ),
     );
