@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'screens/login_page.dart';
 import 'screens/profile_page.dart';
+import 'screens/about_page.dart';
+
+final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.light);
 
 void main() => runApp(const MyApp());
 
@@ -9,18 +11,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Profil Ubay',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+    return ValueListenableBuilder<ThemeMode>(
+      valueListenable: themeNotifier,
+      builder: (_, mode, __) => MaterialApp(
+        title: 'Profil Ubay',
+        debugShowCheckedModeBanner: false,
+        themeMode: mode,
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        ),
+        darkTheme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.teal,
+            brightness: Brightness.dark,
+          ),
+        ),
+        initialRoute: '/profile',
+        routes: {
+          '/profile': (_) => const ProfilePage(),
+          '/about': (_) => const AboutPage(),
+        },
       ),
-      initialRoute: '/login',
-      routes: {
-        '/login': (_) => const LoginPage(),
-        '/profile': (_) => const ProfilePage(),
-      },
     );
   }
 }

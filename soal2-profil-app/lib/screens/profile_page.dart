@@ -43,6 +43,11 @@ class _ProfilePageState extends State<ProfilePage> {
             icon: const Icon(Icons.edit),
             onPressed: _edit,
           ),
+          IconButton(
+            tooltip: 'Tentang saya',
+            icon: const Icon(Icons.info_outline),
+            onPressed: () => Navigator.pushNamed(context, '/about'),
+          ),
         ],
       ),
       body: ListView(
