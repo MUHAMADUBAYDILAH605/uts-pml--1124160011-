@@ -39,14 +39,14 @@ class _ProfilePageState extends State<ProfilePage> {
         title: const Text('Profil'),
         actions: [
           IconButton(
-            tooltip: 'Edit profil',
-            icon: const Icon(Icons.edit),
-            onPressed: _edit,
-          ),
-          IconButton(
             tooltip: 'Tentang saya',
             icon: const Icon(Icons.info_outline),
             onPressed: () => Navigator.pushNamed(context, '/about'),
+          ),
+          IconButton(
+            tooltip: 'Edit profil',
+            icon: const Icon(Icons.edit),
+            onPressed: _edit,
           ),
         ],
       ),
