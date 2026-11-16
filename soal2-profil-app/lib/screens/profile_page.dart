@@ -18,7 +18,7 @@ class _ProfilePageState extends State<ProfilePage> {
     prodi: 'Teknik Informatika',
     kelas: 'A',
     bio: 'Mahasiswa yang sedang belajar pemrograman mobile dengan Flutter.',
-    email: 'ubaydillah@example.com',
+    email: '1124160011@global.ac.id',
     hp: '081234567890',
     github: 'MUHAMADUBAYDILAH605',
   );
