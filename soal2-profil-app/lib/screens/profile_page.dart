@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../main.dart';
 import '../models/profile.dart';
 import '../widgets/info_tile.dart';
@@ -19,7 +20,7 @@ class _ProfilePageState extends State<ProfilePage> {
     kelas: 'A',
     bio: 'Mahasiswa yang sedang belajar pemrograman mobile dengan Flutter.',
     email: '1124160011@global.ac.id',
-    hp: '081234567890',
+    hp: '089634007972',
     github: 'MUHAMADUBAYDILAH605',
   );
 
