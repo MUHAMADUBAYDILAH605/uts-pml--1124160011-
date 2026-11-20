@@ -37,7 +37,7 @@ class AboutPage extends StatelessWidget {
           const SizedBox(height: 8),
           const Card(
             child: Column(
-              children: [           
+              children: [
                 ListTile(
                   leading: Icon(Icons.account_balance),
                   title: Text('S1 Teknik Informatika'),
